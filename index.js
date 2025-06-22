@@ -10,8 +10,8 @@ require("./db/config");
 require("dotenv").config();
 
 const app = express();
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 const PORT = process.env.PORT || 8080;
 
