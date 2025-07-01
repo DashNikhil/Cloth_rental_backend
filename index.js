@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const connectDb = require("./db/config");
 const registerSchema = require("./db/Registration");
 const contactSchema = require("./db/Contact");
 const subscriberSchema = require("./db/Subscriber");
@@ -12,6 +12,8 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+connectDb();
 
 const PORT = process.env.PORT || 8080;
 
