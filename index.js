@@ -97,7 +97,7 @@ app.put("/book", async (req, res) => {
   let user = await Bookings.findOneAndUpdate(
     { ClothId },
     { $set: { status } },
-    { new: true }
+    { new: true },
   );
   if (user) {
     res.send({ message: "Status updated successfully" });
@@ -113,7 +113,7 @@ app.patch("/login", async (req, res) => {
     { $set: { password } },
     {
       new: true,
-    }
+    },
   );
   if (user) {
     res.send({ result: "Password updated successfully" });
@@ -129,7 +129,7 @@ app.listen(PORT, (error) => {
     console.log(
       "Server is Successfully Running, " +
         "and App is listening on port " +
-        PORT
+        PORT,
     );
   else console.log("Error occurred, server can't start", error);
 });
