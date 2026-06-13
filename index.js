@@ -38,7 +38,7 @@ app.post("/login", async (req, res) => {
     // console.log(req.body);
     res.send({ result: user });
   } else {
-    res.send("No user found!");
+    res.send({ result: "No user found!" });
   }
 });
 
